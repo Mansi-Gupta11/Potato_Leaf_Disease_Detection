@@ -6,8 +6,6 @@ appdirs==1.4.4
 astunparse==1.6.3
 
 atomicwrites==1.4.0
-Automat @ file:///tmp/build/80754af9/automat_1600298431173/work
-autopep8 @ file:///opt/conda/conda-bld/autopep8_1650463822033/work
 av==10.0.0
 brotlipy==0.7.0
 cachetools==5.3.1
