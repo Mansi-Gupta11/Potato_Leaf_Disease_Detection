@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Image Classification</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>Leaf Disease Detection</h1>
+        </div>
+        <ul >
+            
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    
+    </div>
+
+    <div class="pre" id="pre1">
+    <form action="/predict" method="post" enctype="multipart/form-data" class="form" id="form1">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png">
+        <button type="submit" onclick="showImagePreview()" id="button">Predict</button>
+        
+    </form>
+
+    <img id="imagePreview"  class="img-responsive" src="#" alt="Image Preview" />
+    <div id="result"></div>
+    </div>
+
+    <script>
+        function showImagePreview() {
+            const fileInput = document.querySelector('input[type="file"]');
+            const imagePreview = document.getElementById('imagePreview');
+            const pre1 = document.getElementById('pre1');
+            const resultDiv = document.getElementById('result');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    pre1.style.marginTop= '150px';
+                    imagePreview.style.marginLeft = '200px';
+                    imagePreview.style.marginBottom = '12px';
+                   
+
+                };
+                reader.readAsDataURL(file);
+                imagePreview.style.display = 'block'; // Show the image preview
+            }
+        }
+
+        document.querySelector('form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+    
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+            document.getElementById('result').innerText = `Disease Detected: ${data.result}`;
+            document.getElementById('result').classList.add('highlight');
+
+        });
+    </script>
+</body>
+</html>
