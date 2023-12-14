@@ -1,13 +1,11 @@
-import webbrowser
 from flask import Flask, render_template, request, jsonify
 import numpy as np
-from flask_ngrok import run_with_ngrok
+
 import cv2
 from keras.models import load_model
 
 app = Flask(__name__)
 
-run_with_ngrok(app)
 
 
 
@@ -44,5 +42,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    webbrowser.open_new('http://127.0.0.1:5000/')
-    app.run()
+    app.run(debug=True)
