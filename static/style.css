@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+    font-family: Arial, sans-serif;
+    background-image: url('bk.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; /* This property prevents the background image from repeating */
+    
+    
+}
+
+
+
+.header {
+    background-color:rgb(151 190 151);
+    opacity:0.7;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+   
+    
+}
+body div .title {
+    margin-left: 2px;
+    color: black;
+    font-family: 'Great Vibes' , cursive;
+    font-size: larger;
+    
+}
+
+ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin-right: 20px ;
+    padding: 7px;
+    font-size:large;
+
+}
+
+li {
+    margin: 3px 15px;
+}
+
+
+
+ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.pre{
+    margin:auto;
+    width:40%;
+    border: 2px;
+    margin-top: 250px;
+    text-align: center;
+    
+}
+
+div .form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+}
+
+input[type="file"] {
+    margin-top:5px;
+    margin-bottom: 65px;
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent white background */
+    padding: 10px;
+    border: none;
+    width: 400px;
+    border-radius: 5px;
+}
+
+button[type="submit"]{
+    padding:5px;
+    border:none;
+    background-color: rgba(127, 216, 140, 0.7);
+    width: 80px;
+    border-radius: 3px;
+
+}
+
+#imagePreview {
+    width: 250px;
+    height: 250px;
+    margin-top: 10px;
+    display: none;
+}
+
+#result{
+    padding:5px;
+    margin-bottom: 10px;
+
+}
+
+.highlight {
+    background-color: rgba(255, 255, 255, 0.7);
+    width:300px;
+    margin:auto;
+    padding: 40px;
+    margin-left: 180px;
+    margin-bottom: 2px;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+
+    ul {
+        display:none;
+    }
+
+    body{
+        
+        background-size: 100% 100vh;
+    }
+    #pre1 {
+        width: 80%; /* Adjust as needed */
+        margin: auto;
+        margin-top: 250px;
+    }
+
+    
+    #imagePreview {
+        width: 250px; /* Adjust as needed */
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 12px;
+        
+    }
+
+    #result {
+        width: 100%; /* Adjust as needed */
+        margin: auto; /* Center the result */
+}
+}
