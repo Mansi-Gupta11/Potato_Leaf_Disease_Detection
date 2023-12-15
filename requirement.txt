@@ -1,6 +1,7 @@
-gunicorn 
+gunicorn
 numpy
-flasktensorflow
+flask
+tensorflow
 keras
 numpy
 matplotlib
